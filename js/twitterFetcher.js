@@ -91,7 +91,7 @@
       return decodeURIComponent(data_src) + '.jpg';
     }
   }
- 
+
 
   var twitterFetcher = {
     fetch: function(config) {
@@ -220,8 +220,8 @@
       }
 
       function swapDataSrc(element) {
-        var avatarImg = element.getElementsByTagName('img')[0];
-        avatarImg.src = avatarImg.getAttribute('data-src-2x');
+        var avatarImg = element.getElementsByTagName('img')[0] !== undefined ? element.getElementsByTagName('img')[0] : "";
+            avatarImg.src = avatarImg !== "" ? avatarImg.getAttribute('data-src-2x') : "";
         return element;
       }
 
@@ -427,4 +427,3 @@
   window.twitterFetcher = twitterFetcher;
   return twitterFetcher;
 }));
-
